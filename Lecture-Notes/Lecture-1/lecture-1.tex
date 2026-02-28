@@ -1,0 +1,77 @@
+\ifdefined\iscombined
+	\lecturetitle{Introduction}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 1} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Introduction}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 1 - Introduction}
+
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item There are two types of design:
+	\begin{enumerate}
+		\item Functional design.
+		\item Non-functional design.
+	\end{enumerate}
+	\item A design principle is a rule of thumb.
+	\begin{itemize}
+		\item Software architectures are critiqued according to some given design principle(s).
+	\end{itemize}
+\end{itemize}
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
