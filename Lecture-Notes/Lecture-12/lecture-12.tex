@@ -1,0 +1,109 @@
+\ifdefined\iscombined
+	\lecturetitle{The $4 + 1$ Model}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 12} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large The $4 + 1$ Model}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 12 - The $4 + 1$ Model}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item The $4 + 1$ model is composed of 5 distinct views.
+	\begin{itemize}
+		\item Each view can be expressed with models reflecting their design.
+	\end{itemize}
+	\item Below is a list of some acceptable models each view in the $4 + 1$ model can use to express their design.
+	\begin{enumerate}
+		\item The logical view:
+		\begin{itemize}
+			\item Class diagrams.
+			\item Block diagrams.
+			\item Sequence diagrams.
+			\item Communication diagrams.
+		\end{itemize}
+		\item The process view:
+		\begin{itemize}
+			\item Activity diagrams.
+			\item Interaction diagrams.
+		\end{itemize}
+		\item The development view:
+		\begin{itemize}
+			\item Package diagrams.
+		\end{itemize}
+		\item The physical view:
+		\begin{itemize}
+			\item Deployment diagrams.
+		\end{itemize}
+	\end{enumerate}
+	\item `Patterns' are reliable solutions for frequently encountered problems in design.
+	\item `Architectural styles' are equivalence classes describing systems which use similar patterns when solving a giving problem.
+	%TODO: Verify with slides.
+	\item In use case diagrams:
+	\begin{itemize}
+		\item `Use case controllers' orchestrate what use case (or mode) the system is in.
+		\begin{itemize}
+			\item Use case controllers can be represented mathematically as Finite State Machines (FSMs)
+		\end{itemize}
+	\end{itemize}
+	\item In class diagrams:
+	\begin{itemize}
+		\item Boundary classes are interface hiding classes.
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
