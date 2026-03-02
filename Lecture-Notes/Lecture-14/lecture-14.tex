@@ -1,0 +1,159 @@
+\ifdefined\iscombined
+	\lecturetitle{Modelling Software Systems}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 14} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Modelling Software Systems}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 14 - Modelling Software Systems}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item Models of a software system's design are:
+	\begin{enumerate}
+		%TODO: Reword
+		\item Abstract representations of knowledge of the system.
+		\item An approximation of some aspects of the system.
+		\item Can be expressed using graphs, natural language, math, and other ways.
+	\end{enumerate}
+	\item A system's design models are used to:
+	\begin{enumerate}
+		\item Communicate knowledge about the system.
+		\item Help articulate and assess design decisions for the system by abstracting away certain details.
+		\item Act as documentation to aid in maintaining the system.
+	\end{enumerate}
+	\item Design models can be `formal' or `rigorous'.
+	\begin{itemize}
+		\item Don't let the word rigorous confuse you! Rigorous design models are subject to interpretability.
+	\end{itemize}
+	\item Examples of formal design models include:
+	\begin{enumerate}
+		\item FSMs.
+		\item Graphs.
+		\item Relations.
+	\end{enumerate}
+	\item Examples of rigorous design include:
+	\begin{enumerate}
+		\item UML diagrams.
+		\item Proprietary/non-standard models.
+	\end{enumerate}
+	\item Analysis class diagrams are an example of a rigorous design model.
+	\item Analysis class diagrams are composed of three types of classes:
+	\begin{enumerate}
+		\item Boundary classes.
+		\begin{itemize}
+			\item Are interfaces between the system and its environment
+			\item Keep the format of communication between the system and its environment as its secret.
+		\end{itemize}
+		\item Entity classes.
+		\begin{itemize}
+			\item Store data.
+			\item Exchange data between classes.
+			\item Keep an $n$-tuple (representing the data the entity class stores) as its secret.
+		\end{itemize}
+		%TODO: Elaborate
+		\item Control classes.
+		\begin{itemize}
+			\item Coordinate interactions between other classes in response to a business event.
+		\end{itemize}
+	\end{enumerate}
+	\item The $4 + 1$ model is another example of design modelling.
+	\begin{itemize}
+		\item The scenario view of the system acts as the basis for its logical view.
+		\begin{itemize}
+			\item The logical view represents the system as an analysis class diagram.
+			\begin{itemize}
+				\item All other views are derived from the logical view.
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\item All software architectures can be said to be composed of the following parts:
+	\begin{enumerate}
+		\item Elements.
+		\item Connectors.
+		\item The rationale behind those elements/connectors.
+	\end{enumerate}
+	\item Connectors always have some source and destination element.
+	\item `Multiplicity' is an attribute of connectors.
+	\begin{itemize}
+		\item The multiplicity of a connector describes how many elements are related together by the connector from source to destination.
+		\begin{itemize}
+			\item The multiplicity of any connector is one of:
+			\begin{enumerate}
+				\item 1-1.
+				\item 1-many.
+				\item Many-1.
+				\item Many-many.
+			\end{enumerate}
+		\end{itemize}
+	\end{itemize}
+	\item `Distance' is another attribute of a connector.
+	\begin{itemize}
+		\item The distance of a connector describes how `far apart' the elements it connects are.
+		\begin{itemize}
+			\item How far apart elements are can be categorized as:
+			\begin{enumerate}
+				\item Elements belonging to the same thread.
+				\item Elements belonging to the same process.
+				\item Elements belonging to the same computer.
+				\item Etc.
+			\end{enumerate}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
