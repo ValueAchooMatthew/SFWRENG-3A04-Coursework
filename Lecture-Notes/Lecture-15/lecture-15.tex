@@ -1,0 +1,155 @@
+\ifdefined\iscombined
+	\lecturetitle{Interaction-Oriented Architectures}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 15} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Interaction-Oriented Architectures}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 15 - Interaction-Oriented Architectures}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item The two major interaction-oriented architectures covered are:
+	\begin{enumerate}
+		\item Presentation, Abstraction, Control (PAC).
+		\item Model, View, Control (MVC).
+		\begin{itemize}
+			\item MVC actually has two closely related variants we will also cover:
+			\begin{enumerate}
+				\item MVC-I.
+				\item MVC-II.
+			\end{enumerate}
+		\end{itemize}
+	\end{enumerate}
+	\item PAC and MVC are closely related.
+	\begin{itemize}
+		\item The presentation module is analogous to the view module.
+		\item The abstraction module is analogous to the model module.
+	\end{itemize}
+	\item PAC and MVC are differentiated by their overall structure.
+	\begin{itemize}
+		\item MVC is composed of a single model, view, and controller element.
+		\item PAC is composed of a hierarchy of presentation, abstraction, and control elements.
+		\begin{itemize}
+			\item An `agent' is a group of these three elements in the hierarchy working together.
+		\end{itemize}
+	\end{itemize}
+	\item PAC agents only communicate with one another by their control elements.
+	\item A new agent is required for each distinct source of data handled by the system.
+	\begin{itemize}
+		\item Data sources are distinct if they describe different quantities or are sent to the system at different frequencies.
+	\end{itemize}
+	\item There are benefits and drawbacks to using a PAC architecture.
+	\begin{itemize}
+		\item Benefits:
+		\begin{enumerate}
+			\item Comparatively better at handling multiple, different kinds of data.
+			\item Comparatively better at handling data being received at varying frequencies.
+		\end{enumerate}
+		\item Drawbacks:
+		\begin{enumerate}
+			\item If a PAC hierarchy is deep, the top-level controller takes comparatively long to communicate with the bottom-level controller.
+			\item If the PAC hierarchy is shallow, the top-level controller has high coupling.
+		\end{enumerate}
+	\end{itemize}
+	\item An effective implementation of a PAC architecture involves properly balancing the trade-offs associated with different hierarchical organizations of agents.
+	\item MVC is primarily used for simpler, web-based systems.
+	\begin{itemize}
+		\item MVC emphasizes the system's look-and-feel.
+	\end{itemize}
+	\item Certain software principles may be occasionally ignored if violating it is more advantageous than adhering.
+	\item MVC-II is the usual variant of MVC discussed above.
+	\item MVC-I is a simpler variant of MVC composed of two elements:
+	\begin{enumerate}
+		\item A model module.
+		\begin{itemize}
+			\item Forms the system's `back-end'.
+		\end{itemize}
+		\item A single view/control module.
+		\begin{itemize}
+			\item Forms the system's `front-end'.
+		\end{itemize}
+	\end{enumerate}
+	\item MVC-I violates the separation of concerns principle.
+	\begin{itemize}
+		\item For simple systems with a minimal need for a separate controller module, this is worth it.
+	\end{itemize}
+	\item The subscribe/notify pattern is used to implement communication between elements in MVC modules.
+	\begin{itemize}
+		\item In the subscribe/notify patterns, elements can be either:
+		\begin{enumerate}
+			\item Subjects.
+			\item Observers.
+		\end{enumerate}
+		\item Observers can subscribe to subjects to be notified of state changes.
+		\item Observers can unsubscribe to subjects to stop receiving such notifications.
+		\item Subjects track all subscribed observers.
+		\item Subjects have a special method to notify all subscribed observers.
+	\end{itemize}
+	\item In the MVC-I architecture:
+	\begin{itemize}
+		\item The back-end is the subject.
+		\item The front-end is the observer.
+	\end{itemize}
+	\item In the MVC-II architecture:
+	\begin{itemize}
+		\item The model element is the subject.
+		\item The controller and view elements are both observers of the model element.
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
