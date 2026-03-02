@@ -1,0 +1,89 @@
+\ifdefined\iscombined
+	\lecturetitle{Basics in Software Architecture}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 9} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Basics in Software Architecture}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 9 - Basics in Software Architecture}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item An architect is a person responsible for formulating the design of a system.
+	\item An architect must always provide three things when designing a system for the design to be valid:
+	\begin{enumerate}
+		%TODO: Elaborate
+		\item The system's elements.
+		\item The system's connectors.
+		\item The rationale behind the elements/connectors chosen.
+	\end{enumerate}
+	\item The component parts of a system, particularly its modules, should have minimal knowledge about one another.
+	\item Structure graphs can have connectors with the following attributes:
+	\begin{enumerate}
+		%TODO: Elaborate
+		\item Direction.
+		\item Synchronization.
+		\item Sequence.
+	\end{enumerate}
+	%TODO: Explain
+	\item Connectors at a given level of a structure graph inherit attributes from their code-structure counterparts.
+	\begin{itemize}
+		\item For example, their multiplicity, their distance, and the medium over which the connection is performed.
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
