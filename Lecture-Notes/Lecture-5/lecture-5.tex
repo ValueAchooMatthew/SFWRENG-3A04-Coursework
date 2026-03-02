@@ -1,0 +1,102 @@
+\ifdefined\iscombined
+	\lecturetitle{Environments}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 5} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Environments}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 5 - Environments}
+
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item Systems are described by their design.
+	\begin{itemize}
+		\item Functional requirements provide the reason for the design's existence.
+	\end{itemize}
+	\item Systems always exist in some given environment.
+	\begin{itemize}
+		\item Non-functional requirements describe how the design should with its environment.
+	\end{itemize}
+	\item Systems and their environments are always interacting in some way.
+	\begin{itemize}
+		\item The environment always initiates these interactions.
+	\end{itemize}
+	\item A `scneario' is a sequence of interactions between a system and its environment.
+	\begin{itemize}
+		\item A global scenario is the integration of all scenarios together for some given system and environment pair.
+	\end{itemize}
+	\item A `business event' is something a system must perform when prompted by its environment.
+	\begin{itemize}
+		\item Scenarios terminate when a system fulfills the business task it was prompted to perform by its environment.
+	\end{itemize}
+	\item A `business process' is the act systems engage in to fulfil business events.
+	\begin{itemize}
+		\item One or more components of a system may be engaged in any given business process.
+	\end{itemize}
+	\item A `viewpoint' is a perspective that designs should take into account.
+	\begin{itemize}
+		\item For example, a legal viewpoint, an economic viewpoint, etc.
+		\item Viewpoints are given for each business event.
+		\begin{itemize}
+			\item Inapplicable viewpoints should still be directly mentioned and specified as so.
+		\end{itemize}
+	\end{itemize}
+	\item The modes of a system describe equivalence classes of similar system behaviours.
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
