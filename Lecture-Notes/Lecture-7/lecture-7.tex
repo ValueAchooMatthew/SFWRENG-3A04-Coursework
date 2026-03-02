@@ -1,0 +1,90 @@
+\ifdefined\iscombined
+	\lecturetitle{Modules}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 7} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Modules}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 7 - Modules}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\emph{I was really tired this lecture so I didn't take many notes, sorry.} \\
+
+\begin{itemize}
+	\item Systems are composed of modules.
+	\begin{itemize}
+		\item Modules are intended to address a single concern.
+		\begin{itemize}
+			\item Modules act as an abstraction over how the system deals with a concern.
+			\begin{itemize}
+				\item In this sense, modules hide information about the system.
+				\item A modules `secret' is that which a module hides.
+			\end{itemize}
+			\item A single concern may be shared across multiple business events.
+			\item Modules have minimal knowledge of each other.
+		\end{itemize}
+	\end{itemize}
+	\item There are three types of modules:
+	\begin{enumerate}
+		%TODO: Explain what each do more clearly.
+		\item Behaviour hiding modules.
+		\item Decision hiding modules.
+		\item Interface hiding modules.
+	\end{enumerate}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
