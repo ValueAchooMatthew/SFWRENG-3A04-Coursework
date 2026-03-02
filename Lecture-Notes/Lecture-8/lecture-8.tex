@@ -1,0 +1,77 @@
+\ifdefined\iscombined
+	\lecturetitle{Exercises in Understanding Design Basics}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 8} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Exercises in Understanding Design Basics}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 8 - Exercises in Understanding Design Basics}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\emph{I didn't take notes for each example taken up in class for this one, just information that seemed generally relevant} \\
+
+\begin{itemize}
+	\item Choosing the form that a system should take is more challenging than what functionalities it should have.
+	\item A system is a collection of one or more elements in an environment which fulfills one or more tasks.
+	\begin{itemize}
+		\item Composite systems are defined as systems which use more than one such element.
+	\end{itemize}
+	\item Modules are used to hide secrets.
+	\item Business events are independent of one another.
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
