@@ -1,0 +1,80 @@
+\ifdefined\iscombined
+	\lecturetitle{Viewpoints}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 6} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Viewpoints}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 6 - Viewpoints}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item When considering a written, non-technical description of a system:
+	\begin{itemize}
+		\item Verbs often describe the system's functions.
+		\item Nouns often describe what the system's functions interacts with.
+	\end{itemize}
+	\item The different modes of a system represent an equivalence class of the system's state.
+	\begin{itemize}
+		\item A system's state describes its behaviour in some way.
+		\item A system's mode changes in response to business events.
+	\end{itemize}
+	\item All viewpoints contribute to a system's global scenario.
+	\item Designs should ideally be open for addition but closed for modification.
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
