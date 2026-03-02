@@ -1,0 +1,86 @@
+\ifdefined\iscombined
+	\lecturetitle{Requirements}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 4} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Requirements}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 4 - Requirements}
+
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item Design is best defined as the process of embedding some function into a form.
+	\item The form a design takes should be:
+	\begin{enumerate}
+		\item Dependable.
+		\item Sustainable.
+		\item `Harmonious' with its environment
+	\end{enumerate}
+	\item Functional requirements describe the functionality of the design.
+	\begin{itemize}
+		\item Describes the design's reason for existence.
+	\end{itemize}
+	\item Non-functional requirements describe the form that design should take.
+	\begin{itemize}
+		\item Describes how the design should be manifested or instantiated
+	\end{itemize}
+	\item Non-functional requirements can put specific requirements on the design's speed, security, ease-of-use, and so on.
+	\item The environment and functional requirements of a design place constraints on its implementation.
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
