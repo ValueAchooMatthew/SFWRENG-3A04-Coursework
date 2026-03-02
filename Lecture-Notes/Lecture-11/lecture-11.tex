@@ -1,0 +1,85 @@
+\ifdefined\iscombined
+	\lecturetitle{Connectors}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 11} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Connectors}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 11 - Connectors}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item Connector fan-out describes how many elements a given connector connects.
+	\item Connectors can exist in one of two different kinds of environments:
+	\begin{enumerate}
+		\item Homogeneous environments.
+		\begin{itemize}
+			\item An environment is homogeneous when all elements are using the same programming language/framework.
+		\end{itemize}
+		\item Heterogeneous environments.
+		\begin{itemize}
+			\item An environment is heterogeneous if it is not homogeneous.
+		\end{itemize}
+	\end{enumerate}
+	\item The `$4 + 1$' model is used to provide an overview on different aspects of the system.
+	\begin{itemize}
+		%TODO: Elaborate
+		\item Composed of the following 5 categories:
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
