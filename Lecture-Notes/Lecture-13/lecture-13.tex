@@ -1,0 +1,99 @@
+\ifdefined\iscombined
+	\lecturetitle{Patterns}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 13} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Patterns}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 13 - Patterns}
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item Generally, patterns are regular occurrences of an object in some given space/dimension.
+	\begin{itemize}
+		\item `Architectural patterns' are solutions to problems belonging to some family of other, similar, architectural patterns.
+	\end{itemize}
+	\item An `architectural style' is a set of characteristics and features which distinguish architectural designs from one another.
+	\item The repeated use of certain patterns defines a software's architectural style.
+	\begin{itemize}
+		\item A given piece of software may be composed of multiple different architectural styles.
+	\end{itemize}
+	\item An architecture's `orientation' the kinds of concerns it is focused on addressing.
+	\item `Interaction-oriented' software architectures focus on challenges associated with:
+	\begin{enumerate}
+		\item Components interacting with other components.
+		\item Components interacting with the environment.
+	\end{enumerate}
+	\item Some examples of interaction-oriented software include PAC and MVC.
+	\begin{itemize}
+		\item Both will be explained in detail in later lectures.
+	\end{itemize}
+	\item Interaction-oriented architectures segregate a system's components into three major modules:
+	\begin{itemize}
+		%TODO: Elaborate
+		\item A data module.
+		\item A flow control module.
+		\item A view/presentation module.
+	\end{itemize}
+	\item Systems with high coupling generally:
+	\begin{itemize}
+		\item Make modifying the system more difficult.
+		\item Are better at separating out concerns.
+	\end{itemize}
+\end{itemize}
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
