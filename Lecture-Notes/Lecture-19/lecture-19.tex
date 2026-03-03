@@ -1,0 +1,240 @@
+\ifdefined\iscombined
+	\lecturetitle{Exercises in Data-Oriented Architectures}
+\else
+\documentclass{article}
+\usepackage{listings}
+\usepackage{changepage}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{mathtools}
+
+\date{
+	\vspace{-.75em}
+	{\large \today}
+}
+
+\title{
+	\vspace*{-1.5em}
+	{\Huge Lecture 19} \\
+	\vspace{-1em}
+	\rule{\textwidth/4}{.01em} \\
+	\vspace{-.25em}
+	{\Large Examples in Data-Oriented Architectures}
+	\vspace{-.75em}
+}
+
+\author{
+	{\large Matthew Farah}
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	citecolor=blue,
+	anchorcolor=blue
+}
+
+\fancyhead{}
+\fancyhead[L]{\today}
+\fancyhead[R]{Lecture 19 - Exercises in Data-Oriented Architectures}
+
+\sectionfont{\fontsize{12}{12}\bfseries}
+\subsectionfont{\fontsize{10}{12}\normalfont}
+\subsubsectionfont{\fontsize{10}{12}\normalfont}
+
+\newcounter{example}
+\renewcommand{\theexample}{\arabic{example}}
+
+\newenvironment{example}[1][]{
+	\refstepcounter{example}
+	\begin{adjustwidth}{1.5em}{}
+	\noindent\textbf{\ifx&#1&Example \theexample:\else Example \theexample \ (#1):\fi}
+	\ignorespaces
+}{
+	\vspace{.5em}
+	\end{adjustwidth}
+}
+
+\newenvironment{solution}{
+	\vspace{.5em}
+	\par
+	\begin{adjustwidth}{1.5em}{}
+	\textbf{{Solution:}}
+	\par
+	\vspace{.5em}
+}{
+	\vspace{1em}
+	\end{adjustwidth}
+}
+
+\begin{document}
+
+\maketitle
+\pagestyle{fancy}
+
+\fi
+
+\begin{itemize}
+	\item There will be 12 questions on the midterm.
+	\item Out of $20$ marks plus 3 bonus marks.
+	\item Questions similar to end of week exercises.
+\end{itemize}
+
+\begin{example}
+	We would like to develop a software system that recognizes connected speech in a
+	1000-word vocabulary with correct interpretations for 90\% of test sentences. Its basic methodology
+	involves the application of symbolic reasoning as an aid to signal processing. A marriage of general
+	artificial intelligence techniques with specific acoustic and linguistic knowledge is needed to accomplish
+	satisfactory speech-understanding performance. Because the various techniques and heuristics employed
+	were embedded within a general problem-solving framework, the system has to embody several design
+	characteristics that are adaptable to other domains as well. You need to keep in mind the characteristics
+	of the speech recognition problem in particular, the special kinds of problem-solving uncertainty in that
+	domain. Uncertainty arises in a problem-solving system if the system’s knowledge is inadequate to
+	produce a solution directly. The fundamental method for handling uncertainty is to create a space
+	of candidate solutions and search that space for a solution. In a difficult problem, i.e. one with a
+	large search space, a problem solver can be effective only if it can search efficiently. To do so, it
+	must apply knowledge to guide the search so that relatively few points in the space need be examined
+	before a solution is found. A key way of accomplishing this is by augmenting the space of candidate
+	solutions with candidate partial solutions and then constructing a complete solution by extending and
+	combining partial candidates. A candidate partial solution represents all complete candidates that
+	contain it. By considering partial solution candidates, we can often eliminate whole subspaces from
+	further consideration and simultaneously focus the search on more promising subspaces. Also, the
+	necessity for diverse candidate partial solution derives from the diversity of transformations used by
+	the speaker in creating the acoustic signal and the corresponding inverse transformations needed by the
+	listener for interpreting it. \\
+	What is the most suitable software architecture for this speech recognition system? Explain why the
+	proposed architecture is the most suitable one.
+\end{example}
+
+\begin{solution}
+	Notice that:
+	\begin{itemize}
+		\item The problem has an indeterminate solution.
+		\item The system is composed of multiple agents:
+		\begin{enumerate}
+			\item One for linguistics/acoustics.
+			\item One of interpretation.
+			\item Etc.
+		\end{enumerate}
+		\item No one agent can solve the problem on its own.
+		\begin{itemize}
+			\item Hence, agents must communicate
+		\end{itemize}
+	\end{itemize}
+
+	Using the above, we can surmise that this system's design would be best served by a blackboard architecture.
+\end{solution}
+
+\begin{example}
+	We would like to build a software system that controls a rebot. It has the following typical
+	software functions:
+
+	\begin{itemize}
+		\item Acquiring and interpreting input provided by sensor.
+		\item Controlling the motion of wheels and other movable parts.
+		\item Planning future paths.
+	\end{itemize}
+	There are some situations that bring challenges in designing the software system. Among them, we list
+	the following:
+	\begin{itemize}
+		\item Obstacles may block path.
+		\item Sensor input may be imperfect.
+		\item Robot may run out of power.
+		\item Mechanical limitations may restrict accuracy of movement.
+		\item Unpredictable events may demand a rapid (autonomous) response.
+	\end{itemize}
+
+	We will use the following evaluation criteria for a proposed architecture:
+	\begin{enumerate}
+		\item We aim at having a robot that coordinates actions to achieve assigned objectives with the reactions imposed by the environment.
+		\item The robot must function in the context of incomplete, unreliable and contradictory information.
+		\item The robot must be robust against sensor faults and problems like reduced power supply. For example, when power is low it should be able to easily disable some of its architectural elements while carrying on with assigned work.
+		\item The robot has to be flexible and capable of providing support for experimentation and reconfiguration.
+	\end{enumerate}
+
+	Propose an appropriate overall architecture. Evaluate your architecture solution against the above evaluation criteria (i.e., explain how your solution satisfies the criteria 1 to 4 listed above.
+\end{example}
+
+\begin{solution}
+	Notice that:
+	\begin{itemize}
+		\item The system has many stated limitations.
+		\item The system's evaluation criteria are all given.
+		\item The system is also composed of multiple agents.
+		\begin{enumerate}
+			\item A sensing agent.
+			\item An agent to control the actuators.
+			\item A navigational agent.
+			\item Etc.
+		\end{enumerate}
+		\item The solution to the problem indeterminate.
+	\end{itemize}
+
+	Hence, from the above, we can surmise that the system would be best served by a blackboard architecture, potentially incorporating some Master/Slave elements for fault tolerance.
+\end{solution}
+
+\begin{example}
+	Traditional biometric systems rely on a single biometric identifier such as fingerprint or
+	face. A multi-biometric system integrates many biometric identifiers (such as face, fingerprint, iris, hand
+	geometry, gait, signature, etc.) and takes advantage of the capabilities of each biometric to provide even
+	greater performance and higher reliability. Note that each biometric identifier has its strengths and
+	weaknesses. The choice of a particular biometric identifier typically depends on the requirements of an
+	application. \\
+
+	Propose an overall architecture for a multi-biometric system and give the rationale behind your
+	design proposal.
+\end{example}
+
+\begin{solution}
+	Notice that:
+	\begin{itemize}
+		\item There are no views, so the system must use a data-oriented architecture.
+		\item There are multiple specialized agents.
+		\item No one agent can solve the problem on its own.
+		\begin{itemize}
+			\item So collaboration, and hence communication, between agents is necessary.
+		\end{itemize}
+		\item The solution to the problem is indeterminate.
+	\end{itemize}
+
+	Hence, from the above, we can surmise that the system would be best served by a blackboard architecture.
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ifdefined\iscombined
+	\newpage
+\else
+	\end{document}
+\fi
